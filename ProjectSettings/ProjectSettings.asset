@@ -156,6 +156,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.RobNeary.ARcheoLearn
+    Standalone: com.RobNeary.ARcheoLearn
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -793,7 +794,13 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 1
+    Collab: 0
+    Game Performance: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -808,11 +815,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: e3de0219-fdf4-4151-afab-768d72838e3b
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: ARcheoLearn
+  organizationId: ultraaviation
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
