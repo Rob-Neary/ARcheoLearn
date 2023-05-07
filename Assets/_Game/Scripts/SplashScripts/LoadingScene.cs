@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class LoadingScene : MonoBehaviour
 {
-    public GameObject LoadingScreen;
+    public GameObject LevelLoader;
+    public Slider slider;
     //public Image LoadingBarFill;
 
     public void LoadScene(int sceneId)
     {
-        Debug.Log("Button pressed!");
         StartCoroutine(LoadSceneAsync(sceneId));
     }
 
@@ -20,13 +20,15 @@ public class LoadingScene : MonoBehaviour
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
 
-        LoadingScreen.SetActive(true);
+        LevelLoader.SetActive(true);
 
         while (!operation.isDone)
         {
-            //float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
+            float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
 
             //LoadingBarFill.fillAmount = progressValue;
+
+            slider.value = progressValue;
 
             yield return null;
         }
