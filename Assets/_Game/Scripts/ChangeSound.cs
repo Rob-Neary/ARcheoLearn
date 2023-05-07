@@ -5,34 +5,38 @@ using UnityEngine.UI;
 
 public class ChangeSound : MonoBehaviour
 {
-  
     private Sprite soundOnImage;
     public Sprite soundOffImage;
     private Image image;
     private bool isOn = true;
-    
-    public AudioSource audioSource;
-    
+
+    public AudioSource[] audioSources;
+
     void Start()
     {
         image = GetComponent<Image>();
-        soundOnImage = image.sprite; 
+        soundOnImage = image.sprite;
     }
 
     public void ButtonClicked()
-    { 
-    if (isOn)
+    {
+        if (isOn)
         {
             image.sprite = soundOffImage;
             isOn = false;
-           audioSource.mute = true;
+            foreach (AudioSource audioSource in audioSources)
+            {
+                audioSource.mute = true;
+            }
         }
-    else
+        else
         {
             image.sprite = soundOnImage;
             isOn = true;
-           audioSource.mute = false;
+            foreach (AudioSource audioSource in audioSources)
+            {
+                audioSource.mute = false;
+            }
         }
     }
-
 }
